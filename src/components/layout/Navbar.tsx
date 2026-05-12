@@ -1,39 +1,52 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { navItems } from "@/constants/homepageData";
+import { navItems } from "@/constants/siteData";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-paper/95 backdrop-blur">
       <Container>
         <nav aria-label="Primary navigation" className="flex min-h-[76px] items-center justify-between gap-8">
-          <Link className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow" href="#home">
-            <span className="h-3 w-3 bg-yellow transition group-hover:bg-deepYellow" />
-            <span className="font-display text-[20px] font-semibold tracking-[-0.02em] text-ink">MS Engineering</span>
+          <Link className="group flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow" href="#home">
+            <Image
+              alt="MS Engineering"
+              className="h-auto w-[154px] transition group-hover:opacity-85 sm:w-[178px]"
+              height={69}
+              priority
+              src="/images/mse-logo-wordmark.webp"
+              width={420}
+            />
           </Link>
 
           <div className="hidden items-center gap-9 lg:flex">
             {navItems.map((item) => (
               <Link
-                className="relative text-[15px] font-medium text-charcoal transition hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow"
+                className="group relative text-[15px] font-medium text-charcoal transition hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow"
                 href={item.href}
                 key={item.href}
               >
                 {item.label}
-                <span className="absolute -bottom-7 left-0 h-0.5 w-0 bg-yellow transition-all hover:w-full" />
+                <span
+                  className={`absolute -bottom-7 left-0 h-0.5 bg-yellow transition-all ${
+                    pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
               </Link>
             ))}
           </div>
 
           <div className="hidden lg:block">
-            <Button className="px-5" href="#contact">
+            <Button className="px-5" href="/contact">
               Request a Quote
             </Button>
           </div>
@@ -64,7 +77,7 @@ export function Navbar() {
                   {item.label}
                 </Link>
               ))}
-              <Button className="mt-5 w-full" href="#contact">
+              <Button className="mt-5 w-full" href="/contact">
                 Request a Quote
               </Button>
             </div>

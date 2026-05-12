@@ -1,6 +1,22 @@
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { solutions } from "@/constants/homepageData";
+
+const solutionImages = [
+  {
+    alt: "Conveyor electroplating line with overhead carriers",
+    src: "/images/conveyor-electroplating-system.webp"
+  },
+  {
+    alt: "Chrome plating plant setup with process controls",
+    src: "/images/chrome-plating-setup.webp"
+  },
+  {
+    alt: "Large automated surface treatment plant interior",
+    src: "/images/automation-plant.webp"
+  }
+];
 
 export function SolutionsSection() {
   return (
@@ -21,6 +37,13 @@ export function SolutionsSection() {
           </div>
 
           <div className="border-t border-line">
+            <div className="grid gap-4 border-b border-line py-6 sm:grid-cols-3">
+              {solutionImages.map((image) => (
+                <div className="relative aspect-[4/3] overflow-hidden bg-executive" key={image.src}>
+                  <Image alt={image.alt} className="object-cover" fill sizes="(min-width: 1024px) 19vw, 33vw" src={image.src} />
+                </div>
+              ))}
+            </div>
             {solutions.map((solution, index) => (
               <article
                 className="group grid gap-5 border-b border-line py-8 transition hover:bg-soft sm:grid-cols-[92px_1fr_40px] sm:px-5"

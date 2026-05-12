@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { qualityCards } from "@/constants/homepageData";
 
@@ -20,16 +21,18 @@ export function QualitySection() {
           </div>
 
           <div className="grid gap-10">
-            <div className="min-h-[280px] border border-line bg-paper p-7">
-              <p className="max-w-sm text-xs font-semibold uppercase tracking-[0.18em] text-muted">
-                Abstract technical diagram / replace with real maintenance access or plant operations image.
+            <div className="relative min-h-[280px] overflow-hidden border border-line bg-executive">
+              <Image
+                alt="Electroplating plant layout with process tanks and operator access"
+                className="object-cover"
+                fill
+                sizes="(min-width: 1024px) 48vw, 100vw"
+                src="/images/electroplating-plant-layout.webp"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.68),rgba(0,0,0,0.14))]" />
+              <p className="absolute left-7 top-7 max-w-sm text-xs font-semibold uppercase tracking-[0.18em] text-zinc-100">
+                Layouts planned for workflow, access, and uptime.
               </p>
-              <div className="mt-16 grid gap-6">
-                <div className="h-px bg-ink" />
-                <div className="ml-[18%] h-px bg-line" />
-                <div className="ml-[36%] h-px bg-line" />
-                <div className="ml-[54%] h-px bg-yellow" />
-              </div>
             </div>
             <div className="grid border-t border-line sm:grid-cols-2">
               {qualityCards.map((card, index) => (

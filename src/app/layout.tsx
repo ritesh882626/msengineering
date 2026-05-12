@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true
+  },
+  icons: {
+    icon: "/images/mse-logo.webp",
+    shortcut: "/images/mse-logo.webp",
+    apple: "/images/mse-logo.webp"
   }
 };
 

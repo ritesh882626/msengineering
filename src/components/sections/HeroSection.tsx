@@ -1,16 +1,23 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
 function EditorialPlantImage() {
   return (
     <div
-      aria-label="industrial electroplating plant setup placeholder"
       className="relative min-h-[330px] overflow-hidden bg-executive sm:min-h-[430px] lg:min-h-[520px]"
-      role="img"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.16),transparent_42%),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[length:100%_100%,72px_72px]" />
-      <div className="absolute left-8 top-8 border-l-2 border-yellow pl-4 font-sans text-xs font-semibold uppercase tracking-[0.18em] text-zinc-300">
-        TODO: Replace with real MS Engineering plant/project image.
+      <Image
+        alt="MS Engineering manufacturing facility exterior"
+        className="object-cover"
+        fill
+        priority
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        src="/images/mse-hero-section-image.webp"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.58))]" />
+      <div className="absolute left-8 top-8 border-l-2 border-yellow pl-4 font-sans text-xs font-semibold uppercase tracking-[0.18em] text-zinc-100">
+        Precision. Performance. Excellence.
       </div>
       <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
         <div className="grid gap-4 border-t border-white/20 pt-6 sm:grid-cols-3">

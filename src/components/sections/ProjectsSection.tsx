@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { showcase } from "@/constants/homepageData";
@@ -5,9 +6,16 @@ import { showcase } from "@/constants/homepageData";
 function ImageBlock() {
   return (
     <div className="relative min-h-[360px] overflow-hidden bg-executive text-white lg:min-h-[520px]">
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.12),transparent_45%),linear-gradient(0deg,rgba(0,0,0,0.22),rgba(0,0,0,0.22))]" />
-      <p className="absolute left-6 top-6 max-w-xs border-l-2 border-yellow pl-4 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-300">
-        TODO: Replace with real MS Engineering plant/project image.
+      <Image
+        alt="Automated electroplating plant with overhead handling system"
+        className="object-cover"
+        fill
+        sizes="(min-width: 1024px) 58vw, 100vw"
+        src="/images/automation-plant.webp"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.06),rgba(0,0,0,0.58))]" />
+      <p className="absolute left-6 top-6 max-w-xs border-l-2 border-yellow pl-4 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-100">
+        Automated plant engineering
       </p>
       <div className="absolute bottom-6 left-6 right-6">
         <p className="text-sm uppercase tracking-[0.18em] text-yellow">Production capability</p>
@@ -39,6 +47,26 @@ export function ProjectsSection() {
         <div className="grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
           <ImageBlock />
           <div className="grid gap-5">
+            <div className="grid gap-5 sm:grid-cols-2">
+              {[
+                {
+                  alt: "Chrome plating setup with components on a rack",
+                  src: "/images/chrome-plating-setup.webp",
+                  title: "Chrome plating lines"
+                },
+                {
+                  alt: "Conveyor electroplating system for industrial production",
+                  src: "/images/conveyor-electroplating-system.webp",
+                  title: "Conveyorized systems"
+                }
+              ].map((item) => (
+                <div className="relative min-h-44 overflow-hidden border border-line bg-executive" key={item.src}>
+                  <Image alt={item.alt} className="object-cover" fill sizes="(min-width: 1024px) 21vw, 50vw" src={item.src} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-black/5" />
+                  <h3 className="absolute bottom-4 left-4 right-4 font-display text-xl font-semibold text-white">{item.title}</h3>
+                </div>
+              ))}
+            </div>
             <div className="border border-line bg-soft p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">Technical direction</p>
               <h3 className="mt-5 font-display text-3xl font-semibold tracking-[-0.04em] text-ink">Process before equipment.</h3>
