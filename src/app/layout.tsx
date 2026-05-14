@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     follow: true
   },
   icons: {
-    icon: "/images/logo-with-wordmark.svg",
-    shortcut: "/images/logo-with-wordmark.svg",
-    apple: "/images/logo-with-wordmark.svg"
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg"
   }
 };
 

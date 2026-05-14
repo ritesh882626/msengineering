@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import { Logo } from "@/components/common/Logo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { navItems } from "@/constants/siteData";
@@ -17,16 +17,7 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-paper/95 backdrop-blur">
       <Container>
         <nav aria-label="Primary navigation" className="flex min-h-[76px] items-center justify-between gap-8">
-          <Link className="group flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow" href="#home">
-            <Image
-              alt="MS Engineering"
-              className="h-auto w-[154px] transition group-hover:opacity-85 sm:w-[178px]"
-              height={69}
-              priority
-              src="/images/logo-with-wordmark.svg"
-              width={420}
-            />
-          </Link>
+          <Logo className="max-w-[180px] sm:max-w-[205px]" href="/" priority size="md" />
 
           <div className="hidden items-center gap-9 lg:flex">
             {navItems.map((item) => (
