@@ -23,7 +23,7 @@ export function Navbar() {
               className="h-auto w-[154px] transition group-hover:opacity-85 sm:w-[178px]"
               height={69}
               priority
-              src="/images/mse-logo-wordmark.webp"
+              src="/images/logo-with-wordmark.svg"
               width={420}
             />
           </Link>

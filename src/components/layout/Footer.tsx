@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.35fr_0.65fr_0.9fr_0.9fr_1.1fr]">
           <div>
             <div className="mb-5 inline-flex bg-white px-4 py-3">
-              <Image alt="MS Engineering" className="h-auto w-[170px]" height={69} src="/images/mse-logo-wordmark.webp" width={420} />
+              <Image alt="MS Engineering" className="h-auto w-[170px]" height={69} src="/images/logo-with-wordmark.svg" width={420} />
             </div>
             <p className="max-w-sm text-sm leading-6 text-zinc-400">
               {company.description}
