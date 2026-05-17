@@ -61,6 +61,19 @@ select {
   display: none;
 }
 
+.solution-overview {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.solution-overview-grid,
+.solution-overview-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .hide-scrollbar {
   scrollbar-width: none;
 }
@@ -128,10 +141,14 @@ select {
 
   .solution-mobile-carousel {
     display: flex;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     gap: 1rem;
     overflow-x: auto;
+    overflow-y: hidden;
     overscroll-behavior-x: contain;
-    padding-right: 2.5rem;
+    padding-right: 2rem;
     scroll-padding-left: 0;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
@@ -143,7 +160,9 @@ select {
   }
 
   .solution-mobile-card {
-    flex: 0 0 min(86vw, 420px);
+    flex: 0 0 86%;
+    max-width: 420px;
+    min-width: 0;
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }

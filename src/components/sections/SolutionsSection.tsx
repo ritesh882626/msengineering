@@ -20,9 +20,9 @@ const solutionImages = [
 
 export function SolutionsSection() {
   return (
-    <section id="solutions" className="bg-paper py-20 lg:py-36">
+    <section id="solutions" className="solution-overview bg-paper py-20 lg:py-36">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.42fr_0.58fr] lg:gap-20">
+        <div className="solution-overview-grid grid gap-12 lg:grid-cols-[0.42fr_0.58fr] lg:gap-20">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <p className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-muted">
               <span className="h-1.5 w-1.5 bg-yellow" />
@@ -36,7 +36,7 @@ export function SolutionsSection() {
             </p>
           </div>
 
-          <div className="border-t border-line">
+          <div className="solution-overview-content border-t border-line">
             <div
               aria-label="Solution overview images"
               className="solution-mobile-carousel scroll-smooth border-b border-line py-6"
