@@ -46,7 +46,7 @@ export function HeroSection() {
           <div className="section-fade">
             <div className="mb-8 h-16 w-px bg-yellow" />
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-muted">Electroplating Plant Engineering</p>
-            <h1 className="max-w-4xl font-display text-[44px] font-semibold leading-[0.98] tracking-[-0.055em] text-ink sm:text-6xl lg:text-[84px]">
+            <h1 className="max-w-4xl break-words font-display text-[38px] font-semibold leading-[0.98] tracking-[-0.04em] text-ink min-[400px]:text-[44px] sm:text-6xl sm:tracking-[-0.055em] lg:text-[84px]">
               Precision-Built Electroplating Plants for Modern Manufacturing
             </h1>
             <p className="mt-8 max-w-[680px] text-lg leading-8 text-charcoal">

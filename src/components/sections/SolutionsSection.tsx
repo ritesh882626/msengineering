@@ -37,10 +37,35 @@ export function SolutionsSection() {
           </div>
 
           <div className="border-t border-line">
-            <div className="grid gap-4 border-b border-line py-6 sm:grid-cols-3">
+            <div
+              aria-label="Solution overview images"
+              className="solution-mobile-carousel scroll-smooth border-b border-line py-6"
+              tabIndex={0}
+            >
+              {solutionImages.map((image) => (
+                <div className="solution-mobile-card relative aspect-[4/3] overflow-hidden bg-executive" key={`mobile-${image.src}`}>
+                  <Image
+                    alt={image.alt}
+                    className="object-cover"
+                    fill
+                    loading="lazy"
+                    sizes="86vw"
+                    src={image.src}
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="solution-desktop-grid grid gap-4 border-b border-line py-6 sm:grid-cols-3">
               {solutionImages.map((image) => (
                 <div className="relative aspect-[4/3] overflow-hidden bg-executive" key={image.src}>
-                  <Image alt={image.alt} className="object-cover" fill sizes="(min-width: 1024px) 19vw, 33vw" src={image.src} />
+                  <Image
+                    alt={image.alt}
+                    className="object-cover"
+                    fill
+                    loading="lazy"
+                    sizes="(min-width: 1024px) 19vw, 33vw"
+                    src={image.src}
+                  />
                 </div>
               ))}
             </div>

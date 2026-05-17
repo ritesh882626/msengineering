@@ -29,6 +29,8 @@ const requirements = ["Corrosion resistance", "Consistent finish", "Process cont
 
 export default function IndustriesPage() {
   const jsonLd = [organizationSchema, breadcrumbSchema(crumbs.map((item) => ({ name: item.label, href: item.href })))];
+  const midpoint = Math.ceil(industriesServed.length / 2);
+  const industryRows = [industriesServed.slice(0, midpoint), industriesServed.slice(midpoint)];
 
   return (
     <>
@@ -72,7 +74,23 @@ export default function IndustriesPage() {
                 Industries We Support
               </h2>
             </div>
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <div className="industries-support-mobile" aria-label="Industries we support">
+              {industryRows.map((row, rowIndex) => (
+                <div
+                  aria-label={`Industries we support row ${rowIndex + 1}`}
+                  className="industries-support-row"
+                  key={`industry-row-${rowIndex}`}
+                  tabIndex={0}
+                >
+                  {row.map((industry) => (
+                    <div className="industries-support-card" key={`mobile-${industry.title}`}>
+                      <IndustryTile {...industry} />
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+            <div className="industries-support-desktop grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {industriesServed.map((industry) => (
                 <IndustryTile key={industry.title} {...industry} />
               ))}
